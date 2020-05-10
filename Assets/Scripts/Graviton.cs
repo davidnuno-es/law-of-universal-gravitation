@@ -35,6 +35,14 @@ public class Graviton : MonoBehaviour
 
     private void Attract(Graviton graviton)
     {
-       
+        Rigidbody target = graviton.rb;
+        Vector3 direction = rb.position - target.position;
+        float distance = direction.magnitude;
+        if(distance == 0)
+        {
+            return;
+        }
+        float forceMagnitude = G * (rb.mass * target.mass) / Mathf.Pow(distance, 2);
+        target.AddForce(direction.normalized * forceMagnitude);
     }
 }
