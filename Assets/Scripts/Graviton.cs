@@ -5,11 +5,16 @@ using UnityEngine;
 public class Graviton : MonoBehaviour
 {
 
+    float G = 667.4f;
+
     List<Graviton> gravitons = new List<Graviton>();
+
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void OnEnable()
     {
+        rb = GetComponent<Rigidbody>();
         Graviton[] tmp = FindObjectsOfType<Graviton>();
         foreach(Graviton graviton in tmp)
         {
