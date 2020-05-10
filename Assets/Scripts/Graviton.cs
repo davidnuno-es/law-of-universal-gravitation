@@ -7,13 +7,14 @@ public class Graviton : MonoBehaviour
 
     float G = 667.4f;
 
-    List<Graviton> gravitons = new List<Graviton>();
+    List<Graviton> gravitons;
 
     Rigidbody rb;
 
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
+        gravitons = new List<Graviton>();
         rb = GetComponent<Rigidbody>();
         Graviton[] tmp = FindObjectsOfType<Graviton>();
         foreach(Graviton graviton in tmp)
