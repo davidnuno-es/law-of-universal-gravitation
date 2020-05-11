@@ -655,9 +655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1265903972476834573, guid: 0051e0717eb08a74a82065d905b6a433, type: 3}
-  count: 50
-  radiusLength: 500
-  commonMass: 5
 --- !u!1 &1824806397
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +667,7 @@ GameObject:
   - component: {fileID: 1824806401}
   - component: {fileID: 1824806400}
   - component: {fileID: 1824806399}
+  - component: {fileID: 1824806402}
   m_Layer: 5
   m_Name: returnButton
   m_TagString: Untagged
@@ -777,6 +775,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824806397}
   m_CullTransparentMesh: 0
+--- !u!114 &1824806402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824806397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6860132eb54f78e40a2d8bafd0374b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943946007
 GameObject:
   m_ObjectHideFlags: 0
