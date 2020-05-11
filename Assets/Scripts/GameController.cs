@@ -1,34 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
 
     public GameObject prefab;
 
-    [Range(2, 60)]
-    public int count = 2;
-    [Range(10, 1000)]
-    public float radiusLength = 10;
-
-    [Range(1, 100)]
-    public float commonMass = 5;
-
     // Start is called before the first frame update
     void OnEnable()
     {
-        for(int i = 0; i < count; i++)
+        for(int i = 0; i < SceneInfo.objectsCount; i++)
         {
-            CreateGraviton(Random.Range(0.1f, commonMass));
+            CreateGraviton(Random.Range(0.1f, SceneInfo.commonMass));
         }
     }
 
     private void CreateGraviton(float mass = 1)
     {
-        Vector3 position = new Vector3(Random.Range(-radiusLength, radiusLength), Random.Range(-radiusLength, radiusLength), Random.Range(-radiusLength, radiusLength));
-        GameObject o = Instantiate(prefab, position, Quaternion.identity);
+        GameObject o = Instantiate(prefab, GetRandomPosition(), Quaternion.identity);
         o.GetComponent<Graviton>().mass = mass;
         o.transform.parent = transform;
+    }
+
+    private Vector3 GetRandomPosition()
+    {
+        return new Vector3(GetPosition(), GetPosition(), GetPosition());
+    }
+
+    private float GetPosition()
+    {
+        return Random.Range(-SceneInfo.spawnRadius, SceneInfo.spawnRadius);
     }
 }
