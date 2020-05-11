@@ -3,14 +3,26 @@ using UnityEngine.UI;
 
 public class QuitGame : MonoBehaviour
 {
+
+    public Button button;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(Exit);
+
+    #if UNITY_STANDALONE
+            Debug.Log("Standalone platform detected");
+            GetComponent<Button>().onClick.AddListener(Exit);
+    #elif UNITY_WEBGL
+            Debug.Log("WebGL platform detected");
+            button.gameObject.SetActive(false);
+    #else
+            Debug.Log("WebGL or other platform detected");
+    #endif
+
     }
 
     // Update is called once per frame
-    private void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
