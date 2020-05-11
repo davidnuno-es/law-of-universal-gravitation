@@ -9,7 +9,15 @@ public class LoadScene : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(changeScene);
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Return))
+        {
+            changeScene();
+        }
+    }
+
     private void changeScene()
     {
         Debug.Log("Loading game scene");
