@@ -14,6 +14,15 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+       Graviton [] gos = FindObjectsOfType<Graviton>();
+       foreach(Graviton g in gos)
+        {
+            Destroy(g);
+        }
+    }
+
     private void CreateGraviton(float mass = 1)
     {
         GameObject o = Instantiate(prefab, GetRandomPosition(), Quaternion.identity);
