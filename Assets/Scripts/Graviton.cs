@@ -7,6 +7,7 @@ public class Graviton : MonoBehaviour
 
     float G = 667.4f;
 
+    public float mass = 5;
     List<Graviton> gravitons;
 
     Rigidbody rb;
@@ -16,6 +17,7 @@ public class Graviton : MonoBehaviour
     {
         gravitons = new List<Graviton>();
         rb = GetComponent<Rigidbody>();
+        rb.mass = mass;
         Graviton[] tmp = FindObjectsOfType<Graviton>();
         foreach(Graviton graviton in tmp)
         {
