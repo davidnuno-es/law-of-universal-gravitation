@@ -6,7 +6,7 @@ public class SpawnRadiusSlider : MonoBehaviour
     public Text txt;
     Slider slider;
 
-    float value = 0;
+    float value = 100;
 
     private void Start()
     {
