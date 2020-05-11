@@ -4,6 +4,7 @@ public class GameController : MonoBehaviour
 {
 
     public GameObject prefab;
+    public GameObject infoPanel;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -20,6 +21,26 @@ public class GameController : MonoBehaviour
        foreach(Graviton g in gos)
         {
             Destroy(g);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.I))
+        {
+            if(infoPanel.active == true)
+            {
+                FindObjectOfType<InfoPanel>().Close();
+
+            }
+            else
+            {
+                FindObjectOfType<InfoPanel>().Open();
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            FindObjectOfType<ReturnToMainScene>().ReturnToMainMenu();
         }
     }
 
