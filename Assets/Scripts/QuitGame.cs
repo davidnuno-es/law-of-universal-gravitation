@@ -11,7 +11,7 @@ public class QuitGame : MonoBehaviour
 
     #if UNITY_STANDALONE
             Debug.Log("Standalone platform detected");
-            GetComponent<Button>().onClick.AddListener(Exit);
+            button.onClick.AddListener(Exit);
     #elif UNITY_WEBGL
             Debug.Log("WebGL platform detected");
             button.gameObject.SetActive(false);
