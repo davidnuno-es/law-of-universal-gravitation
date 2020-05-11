@@ -12,7 +12,7 @@ public class MassObjectsSlider : MonoBehaviour
     {
         slider = GetComponent<Slider>();
         value = slider.value;
-        txt.text = value + "";
+        txt.text = value + " Kg";
         SceneInfo.commonMass = (int)value;
     }
 

@@ -12,7 +12,7 @@ public class SpawnRadiusSlider : MonoBehaviour
     {
         slider = GetComponent<Slider>();
         value = slider.value;
-        txt.text = value + "";
+        txt.text = value + " m";
         SceneInfo.spawnRadius = value;
     }
 
